@@ -10,6 +10,9 @@ export class TasksService {
         return this.tasks;
     }
 
+    getTaskById(id: string): Task {
+        return this.tasks.find(task => task.id === id)
+    }
     // retuns a single task
     createTask(createTaskDto: CreateTaskDto): Task {
         const { title, description } = createTaskDto;
@@ -24,4 +27,6 @@ export class TasksService {
         this.tasks.push(task);
         return task;
     }
+
+    
 }
