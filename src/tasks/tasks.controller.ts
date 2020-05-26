@@ -8,7 +8,7 @@ export class TasksController {
     constructor(private tasksService: TasksService) {}
 
     @Get()
-    getAllTasks(): Task[] {
+    getTasks(): Task[] {
         return this.tasksService.getAllTasks();
     }
 
@@ -32,6 +32,8 @@ export class TasksController {
         @Param('id') id: string,
         @Body('status') status: TaskStatus,
     ): Task {
-        return this.tasksService.updateTaskStatus(id,status)
+        return this.tasvice.updateTaskStatus(id,status)
     }
+
+
 } 
